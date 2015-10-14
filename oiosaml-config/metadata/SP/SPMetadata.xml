@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- $Id: SPMetadata.xml 2936 2008-05-26 08:06:46Z jre $ -->
-<md:EntityDescriptor entityID="http://192.168.2.101:8080/CH.WebsiteDemo" xmlns:brs="http://www.eogs.dk/2007/07/brs" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">
+<md:EntityDescriptor entityID="https://chwebsitedemo.test-stoettesystemerne.dk:8181" xmlns:brs="http://www.eogs.dk/2007/07/brs" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">
    <md:SPSSODescriptor AuthnRequestsSigned="true" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
       <md:Extensions>
          <brs:Privilege>myPrivilege1A</brs:Privilege>
@@ -56,9 +56,9 @@ hgDfHvLF6ax25C057w==
             </ds:X509Data>          
          </ds:KeyInfo>
       </md:KeyDescriptor>
-      <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="http://192.168.2.101:8080/CH.WebsiteDemo/saml/saml/LogoutServiceHTTPRedirect" ResponseLocation="http://192.168.2.101:8080/CH.WebsiteDemo/saml/LogoutServiceHTTPRedirectResponse"/>
-      <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="http://192.168.2.101:8080/CH.WebsiteDemo/saml/LogoutServiceSOAP"/>
-      <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="http://192.168.2.101:8080/CH.WebsiteDemo/saml/SAMLAssertionConsumer" index="0"/>
+      <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://chwebsitedemo.test-stoettesystemerne.dk:8181/saml/LogoutServiceHTTPRedirect" ResponseLocation="https://chwebsitedemo.test-stoettesystemerne.dk:8181/saml/LogoutServiceHTTPRedirectResponse"/>
+      <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://chwebsitedemo.test-stoettesystemerne.dk:8181/saml/LogoutServiceSOAP"/>
+      <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://chwebsitedemo.test-stoettesystemerne.dk:8181/saml/SAMLAssertionConsumer" index="0"/>
    </md:SPSSODescriptor>
    <md:Organization>
       <md:OrganizationName xml:lang="en">Globe Team</md:OrganizationName>
