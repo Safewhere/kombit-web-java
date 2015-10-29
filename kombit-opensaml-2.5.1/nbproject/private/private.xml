@@ -3,9 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Data/Github/kombit-customize-libraries/kombit-opensaml-2.5.1/src/org/opensaml/saml2/binding/encoding/HTTPRedirectDeflateEncoder.java</file>
-            <file>file:/C:/Data/Github/kombit-customize-libraries/kombit-opensaml-2.5.1/src/org/opensaml/common/binding/BasicSAMLMessageContext.java</file>
-            <file>file:/C:/Data/Github/kombit-customize-libraries/kombit-opensaml-2.5.1/src/org/opensaml/common/binding/SAMLMessageContext.java</file>
+            <file>file:/C:/Data/Github/kombit-web-java/kombit-opensaml-2.5.1/src/org/opensaml/DefaultBootstrap.java</file>
+            <file>file:/C:/Data/Github/kombit-web-java/kombit-opensaml-2.5.1/src/org/opensaml/common/binding/decoding/BaseSAMLMessageDecoder.java</file>
+            <file>file:/C:/Data/Github/kombit-web-java/kombit-opensaml-2.5.1/src/org/opensaml/saml2/metadata/provider/FileBackedHTTPMetadataProvider.java</file>
         </group>
     </open-files>
 </project-private>
