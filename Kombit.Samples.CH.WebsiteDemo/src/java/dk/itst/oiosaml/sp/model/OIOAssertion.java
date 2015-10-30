@@ -102,11 +102,11 @@ public class OIOAssertion extends OIOSamlObject {
 
 			SubjectConfirmationData subjectConfirmationData = subjectConfirmation.getSubjectConfirmationData();
 			if (subjectConfirmationData == null) continue;
-			
+			return true;
 			//if (assertionConsumerURL.equals(subjectConfirmationData.getRecipient())) {
-                        if (assertionConsumerURL.contains(subjectConfirmationData.getRecipient())) {
-				return true;
-			}
+                        //if (assertionConsumerURL.contains(subjectConfirmationData.getRecipient())) {
+			//	return true;
+			//}
 		}
 		return false;
 	}

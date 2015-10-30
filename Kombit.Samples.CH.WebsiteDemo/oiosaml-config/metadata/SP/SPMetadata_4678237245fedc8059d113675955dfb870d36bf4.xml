@@ -94,7 +94,8 @@ tvw7spmc45CIaIU/pT4WF5sjrK4RoEX05sFDJrDMGYRDhc0q1LdnPPrpPEsr2zbE
 		<md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://adgangsstyring.projekt-stoettesystemerne.dk:8181/websitedemo/saml/LogoutServiceSOAP"/>
 		
 		<md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName</md:NameIDFormat>
-		<md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://saml.adgangsstyring.projekt-stoettesystemerne.dk:8181/websitedemo//saml/SAMLAssertionConsumer" index="0" isDefault="true" />
+		<md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://adgangsstyring.projekt-stoettesystemerne.dk:8181/websitedemo/saml/SAMLAssertionConsumer" index="0"/>
+
 		<md:AttributeConsumingService index="0" isDefault="true">
 			<ds:ServiceName xml:lang="da">SP</ds:ServiceName>
 			<ds:RequestedAttribute Name="dk:gov:saml:attribute:AssuranceLevel" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic" isRequired="true" />
