@@ -97,12 +97,12 @@ tvw7spmc45CIaIU/pT4WF5sjrK4RoEX05sFDJrDMGYRDhc0q1LdnPPrpPEsr2zbE
 		<md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://adgangsstyring.projekt-stoettesystemerne.dk:8181/websitedemo/saml/SAMLAssertionConsumer" index="0"/>
 
 		<md:AttributeConsumingService index="0" isDefault="true">
-			<ds:ServiceName xml:lang="da">SP</ds:ServiceName>
-			<ds:RequestedAttribute Name="dk:gov:saml:attribute:AssuranceLevel" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic" isRequired="true" />
-			<ds:RequestedAttribute Name="dk:gov:saml:attribute:SpecVer" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic" isRequired="true" />
-			<ds:RequestedAttribute Name="dk:gov:saml:attribute:KombitSpecVer" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic" isRequired="true" />
-			<ds:RequestedAttribute Name="dk:gov:saml:attribute:CvrNumberIdentifier" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic" isRequired="false"/>
-			<ds:RequestedAttribute Name="dk:gov:saml:attribute:Privileges_intermediate" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic" isRequired="false"/>
+			<md:ServiceName xml:lang="da">SP</md:ServiceName>
+			<md:RequestedAttribute Name="dk:gov:saml:attribute:AssuranceLevel" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic" isRequired="true" />
+			<md:RequestedAttribute Name="dk:gov:saml:attribute:SpecVer" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic" isRequired="true" />
+			<md:RequestedAttribute Name="dk:gov:saml:attribute:KombitSpecVer" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic" isRequired="true" />
+			<md:RequestedAttribute Name="dk:gov:saml:attribute:CvrNumberIdentifier" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic" isRequired="false"/>
+			<md:RequestedAttribute Name="dk:gov:saml:attribute:Privileges_intermediate" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic" isRequired="false"/>
 		</md:AttributeConsumingService>
 
 
