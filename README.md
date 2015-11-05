@@ -1,2 +1,2 @@
 # kombit-web-java
-Sample Java Web Application using STS
+Sample Java Web Application using Context Handler
