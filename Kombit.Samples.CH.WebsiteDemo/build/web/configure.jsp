@@ -1,11 +1,33 @@
-<!-- "$Id: index.jsp 2978 2008-06-10 07:39:19Z jre $"; -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+	
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+        
+      <!-- "$Id: index.jsp 2978 2008-06-10 07:39:19Z jre $"; -->
 <%@page import="dk.itst.oiosaml.configuration.SAMLConfigurationFactory"%>
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="org.apache.commons.configuration.Configuration"%>
 <%@page import="java.util.Iterator"%>
-    <jsp:include page="head.jsp" />
-    <h1>Runtime configuration - OIOSAML.java Service Provider Demo</h1>
-	<p>Use this to change the OIOSAML.java runtime configuration. Changes here are lost when the server is restarted. See <a href="docs/configuration.html">the documentation</a> for configuration help.</p>
+<%@page import="org.apache.commons.configuration.CompositeConfiguration"%>
+<%@page import="org.apache.commons.configuration.PropertiesConfiguration"%>
+<%@page import="java.io.StringWriter"%>
+<%@page import="dk.itst.oiosaml.sp.service.util.Constants"%>
 
 <%
 
@@ -36,32 +58,90 @@ if (request.getMethod().equals("POST") && c != null) {
 c.save(sw);
 %>
 
-<form method="post">
+  	<div id="wrapper">
+            <div id="maincontent" class="container">
+                <jsp:include page="head.jsp" />
 
-<table border="0">
-<tr><td>IsPassive</td><td><input type="checkbox" name="isPassive" value="true" <%=  conf.getBoolean(Constants.PROP_PASSIVE, false) ? "checked='checked'" : "" %>/></td></tr>
-<tr><td>Passive username</td><td><input type="text" name="passiveUsername" value="<%=  conf.getString(Constants.PROP_PASSIVE_USER_ID, "") %>" /></td></tr>
-<tr><td>Force authn</td><td><input type="checkbox" name="forceAuthn" value="true" <%=  conf.getString(Constants.PROP_FORCE_AUTHN_URLS, null) == null ? "" : "checked='checked'" %> /></td></tr>
-<tr><td>Allow create</td><td><input type="checkbox" name="allowCreate" value="true" <%=  conf.getBoolean(Constants.PROP_NAMEID_POLICY_ALLOW_CREATE, false) ? "checked='checked'" : "" %> /></td></tr>
-<tr><td>NameID Policy (blank, persistent or transient)</td><td><input type="text" name="nameIdPolicy" value="<%=  conf.getString(Constants.PROP_NAMEID_POLICY, "") %>" /></td></tr>
-<tr><td><input type="text" name="property" /></td><td><input type="text" name="propertyValue" /></td></tr>
-</table>
-<input type="submit" value="Set configuration" />
-</form>
+                <div class="content">
+                        <h1 class="page-header">Runtime configuration - OIOSAML.java Service Provider Demo</h1>
+                        <p>Use this to change the OIOSAML.java runtime configuration. Changes here are lost when the server is restarted. See <a href="docs/configuration.html">the documentation</a> for configuration help.</p>
 
-<h3>Current configuration - from <%= c.getFile() %></h3>
-<pre>
-<%= sw %>
-</pre>
+                        <form class="form-horizontal" method="post">
+                            
+                            <!-- Multiple Checkboxes -->
+                            <div class="form-group">
+                              <label class="col-md-4 control-label" for="checkboxes">IsPassive</label>
+                              <div class="col-md-4">
+                              <div class="checkbox">
+                                    <label for="checkboxes-0">                                      
+                                      <input type="checkbox" name="isPassive" value="true" <%=  conf.getBoolean(Constants.PROP_PASSIVE, false) ? "checked='checked'" : "" %>/>
+                                    </label>
+                                    </div>
+                              </div>
+                            </div>
+                            
+                            <!-- Text input-->
+                            <div class="form-group">
+                              <label class="col-md-4 control-label" for="textinput">Passive username</label>  
+                              <div class="col-md-4">                            
+                                    <input type="text" name="passiveUsername" class="form-control input-md" value="<%=  conf.getString(Constants.PROP_PASSIVE_USER_ID, "") %>" />
+                              </div>
+                            </div>
 
-
+                              <!-- Multiple Checkboxes -->
+                            <div class="form-group">
+                              <label class="col-md-4 control-label" for="checkboxes">Force authn</label>
+                              <div class="col-md-4">
+                              <div class="checkbox">
+                                    <label for="checkboxes-0">                                      
+                                      <input type="checkbox" name="forceAuthn" value="true" <%=  conf.getString(Constants.PROP_FORCE_AUTHN_URLS, null) == null ? "" : "checked='checked'" %> />
+                                    </label>
+                                    </div>
+                              </div>
+                            </div>
+                                    <!-- Multiple Checkboxes -->
+                            <div class="form-group">
+                              <label class="col-md-4 control-label" for="checkboxes">Allow create</label>
+                              <div class="col-md-4">
+                              <div class="checkbox">
+                                    <label for="checkboxes-0">                                      
+                                      <input type="checkbox" name="allowCreate" value="true" <%=  conf.getBoolean(Constants.PROP_NAMEID_POLICY_ALLOW_CREATE, false) ? "checked='checked'" : "" %> />
+                                    </label>
+                                    </div>
+                              </div>
+                            </div>
+                                    
+                            <!-- Text input-->
+                            <div class="form-group">
+                              <label class="col-md-4 control-label" for="textinput">NameID Policy (blank, persistent or transient)</label>  
+                              <div class="col-md-4">
+                                  <input class="form-control input-md" type="text" name="nameIdPolicy" value="<%=  conf.getString(Constants.PROP_NAMEID_POLICY, "") %>" />
+                                  <input class="form-control input-md" type="text" name="property" />
+                                  <input class="form-control input-md" type="text" name="propertyValue" />
+                                  
+                              </div>
+                            </div>
+                            <div class="form-group">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-4">
+                                            <button type="submit" class="btn btn-primary">Set configuration</button>
+                                    </div>
+                            </div>
+                    </form>
+                    
+                    </br>
+                                  
+                    <h3 class="page-header">Current configuration - from <%= c.getFile() %></h3>
+                    <pre>
+                    <%= sw %>
+                    </pre>
+                    
+                </div>
+                <jsp:include page="foot.jsp" />			
+            </div>		
+        </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
   </body>
-
-
-
-
-
-<%@page import="org.apache.commons.configuration.CompositeConfiguration"%>
-<%@page import="org.apache.commons.configuration.PropertiesConfiguration"%>
-<%@page import="java.io.StringWriter"%>
-<%@page import="dk.itst.oiosaml.sp.service.util.Constants"%></html>
+</html>
