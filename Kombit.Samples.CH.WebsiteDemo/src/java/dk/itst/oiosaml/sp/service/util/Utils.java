@@ -43,9 +43,11 @@ import org.opensaml.ws.soap.util.SOAPConstants;
 import org.opensaml.xml.util.Base64;
 
 import dk.itst.oiosaml.common.OIOSAMLConstants;
+import dk.itst.oiosaml.configuration.SAMLConfigurationFactory;
 import dk.itst.oiosaml.error.Layer;
 import dk.itst.oiosaml.error.WrappedException;
 import dk.itst.oiosaml.sp.service.SAMLHandler;
+import org.opensaml.xml.signature.SignatureConstants;
 
 /**
  * Utility class used for signing SAML documents and verifying the signed
@@ -140,8 +142,9 @@ public final class Utils {
 			log.debug("key....:" + key.toString());
 
 		try {
-			Signature signer = Signature.getInstance(OIOSAMLConstants.SHA1_WITH_RSA);
-			signer.initVerify(key);
+			//Signature signer = Signature.getInstance(SAMLConfigurationFactory.getConfiguration().getSystemConfiguration().getString(Constants.SIGNON_SIGNATURE_METHOD, SignatureConstants.ALGO_ID_SIGNATURE_RSA_SHA256));
+                    Signature signer = Signature.getInstance("SHA256withRSA");	
+                    signer.initVerify(key);
 			signer.update(data);
 			return signer.verify(sig);
 		} catch (InvalidKeyException e) {
