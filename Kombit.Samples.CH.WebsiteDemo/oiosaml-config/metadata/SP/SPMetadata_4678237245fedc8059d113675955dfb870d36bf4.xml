@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- $Id: SPMetadata.xml 2936 2008-05-26 08:06:46Z jre $ -->
-<md:EntityDescriptor entityID="https://saml.claimapp.projekt-stoettesystemerne.dk:8181" xmlns:brs="http://www.eogs.dk/2007/07/brs" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">
+<md:EntityDescriptor entityID="https://saml.adgangsstyring.projekt-stoettesystemerne.dk:8181/websitedemo" xmlns:brs="http://www.eogs.dk/2007/07/brs" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">
 	<md:SPSSODescriptor AuthnRequestsSigned="true" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
 		<md:Extensions>
 			<brs:Privilege>myPrivilege1A</brs:Privilege>
