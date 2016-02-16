@@ -16,3 +16,4 @@ hs_err_pid*
 /build/
 /dist/
 /kombit-opensaml-2.5.1/dist/
+/kombit-opensaml-2.5.1/build/
