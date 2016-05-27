@@ -25,7 +25,7 @@ This following prerequisites are needed:* Windows Server 2012R2
 * JDK 7 
 * NetBeans 8, installed with Glassfish and Metro framework
 * Unlimited Strength Cryptography file downloaded from Oracle and installed.
-* Glassfish configured with HTTPS. In this guide, it is assumed that the hostname of the Glassfish instance is `claimapp.projekt-stoettesystemerne.dk`, and that Glassfish is listening on SSL on port `8181`.
+* Glassfish configured with HTTPS. In this guide, it is assumed that the hostname of the Glassfish instance is `claimapp.eksterntest-stoettesystemerne.dk`, and that Glassfish is listening on SSL on port `8181`.
 
 ## <a name=“setup”></a>Setup
 To use this sample do the following:
@@ -35,5 +35,5 @@ To use this sample do the following:
 3. Build the Netbeans project in `C:\kombit-web-java\`
 4. Copy the folder `C:\kombit-web-java\Kombit.Samples.CH.WebsiteDemo` to the autodeploy folder of Glassfish (e.g. `C:\Program Files\glassfish-4.1\glassfish\domains\domain1\autodeploy`)
 5. Since the Glassfish server is running , it automatically deploys the website to `C:\Program Files\glassfish-4.1\glassfish\domains\domain1\applications\Kombit.Samples.CH.WebsiteDemo`
-6. Open a browser and point it to <https://claimapp.projekt-stoettesystemerne.dk:8181/>
-7. Click the [Page requiring Login](https://claimapp.projekt-stoettesystemerne.dk:8181/priv1.jsp) to login using the Context Handler. 
+6. Open a browser and point it to <https://claimapp.eksterntest-stoettesystemerne.dk:8181/>
+7. Click the [Page requiring Login](https://claimapp.eksterntest-stoettesystemerne.dk:8181/priv1.jsp) to login using the Context Handler. 
